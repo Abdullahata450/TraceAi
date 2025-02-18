@@ -16,7 +16,7 @@ const ResultsPage = () => {
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center py-10">
-      <h1 className="text-5xl font-bold mb-6">Results</h1>
+      <h1 className="text-5xl font-bold text-white mb-6">Results</h1>
       <div className="bg-white p-6 shadow-md rounded-lg w-3/4">
         <div className="border p-4 rounded-md mb-4">
           <p><strong>Dump Name:</strong> memdump_win7_54.raw</p>

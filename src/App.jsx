@@ -7,6 +7,9 @@ import SignInForm from './components/login/signin';
 import FuturisticUploadPage from './Upload Memory Dump';
 import ProcessingPage from './Upload Memory Dump/ProcessingPage';
 import ResultsPage from './Upload Memory Dump/Result';
+import ChatSystem from './ChatSystem';
+import Home2 from './Home/Home2';
+import ContactUs from './Home/ContactUs';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path="/Upload" element={<FuturisticUploadPage />} />
         <Route path="/Processing" element={<ProcessingPage />} />
         <Route path="/Results" element={<ResultsPage />} />
+        <Route path='/ChatSystem' element={<ChatSystem />} />
+        <Route path='/Home2' element={<Home2 />} />
+        <Route path='/ContactUs' element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   );

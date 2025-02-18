@@ -30,8 +30,27 @@ function Form({ isSignin = false }) {
       return;
     }
 
-    alert(isSignin ? "Sign In Successful!" : "Sign Up Successful!");
-    navigate(isSignin ? '/users/signup' : '/users/signin');
+    if (isSignin) {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      if (storedUser && storedUser.email === data.email) {
+        alert("Sign In Successful!");
+        localStorage.setItem("isAuthenticated", "true"); // Set user as authenticated
+        navigate('/');
+      } else {
+        alert("Invalid email or password!");
+      }
+    } else {
+      const userDetails = {
+
+        fullname: data.fullname,
+        email: data.email,
+        password: data.password,
+      };
+      localStorage.setItem("user", JSON.stringify(userDetails));
+      localStorage.setItem("isAuthenticated", "true"); // Mark user as authenticated
+      alert("Sign Up Successful!");
+      navigate('/');
+    }
   };
 
   return (

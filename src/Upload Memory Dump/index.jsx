@@ -31,11 +31,11 @@ function FuturisticUploadPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 h-screen flex items-center justify-center"
+          className="bg-gradient-to-r from-slate-800 to-slate-700 h-screen flex items-center justify-center"
         >
           <div className="bg-white/40 w-[600px] h-[400px] shadow-xl rounded-lg flex-col items-center justify-center p-8 relative">
             <h1 className="text-center font-bold text-3xl mb-4">Upload Your Memory Dump</h1>
-            <p className="text-gray-700 mb-6">Please select a memory dump file to upload.</p>
+            <p className="text-white mb-6">Please select a memory dump file to upload.</p>
             <div className="flex flex-col space-y-4">
               <input type="file" onChange={handleFileChange} className="hidden" id="file-upload" />
               <label

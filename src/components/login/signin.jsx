@@ -25,9 +25,18 @@ function SignInForm() {
       return;
     }
 
-    if (data.email === "fuzail123@gmail.com" && data.password === "admin123") {
+    // Retrieve user from localStorage
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedAdmin = JSON.parse(localStorage.getItem("admin"));
+
+    if (data.email === "admin@memtrace.com" && data.password === "admin") {
+      navigate('/home2'); // Navigate to home page after login
+    } else if (storedAdmin && storedAdmin.email === data.email && storedAdmin.password === data.password) {
       alert("Sign In Successful!");
-      navigate('/'); // Navigate to the home page or dashboard after successful sign-in
+      navigate('/'); // Navigate to home page after login
+    } else if (storedUser && storedUser.email === data.email && storedUser.password === data.password) {
+      alert("Sign In Successful!");
+      navigate('/'); // Navigate to home page after login
     } else {
       alert("Invalid email or password!");
     }
@@ -35,13 +44,9 @@ function SignInForm() {
 
   return (
     <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex items-center justify-center'>
-      <form onSubmit={handleSubmit} className='backdrop-blur bg-white/40 border w-[500px] h-[500px] shadow-xl rounded-lg justify-center items-center flex flex-col'>
-        <div className='text-center font-bold text-4xl mb-3'>
-          Welcome Back
-        </div>
-        <div className='font-light text-xl mb-5'>
-          Sign in To Get Started
-        </div>
+      <form onSubmit={handleSubmit} className='backdrop-blur bg-white/40 border w-[500px] h-[500px] shadow-xl rounded-lg flex flex-col justify-center items-center'>
+        <div className='text-center font-bold text-4xl mb-3'>Welcome Back</div>
+        <div className='font-light text-xl mb-5'>Sign in To Get Started</div>
         <div className='mb-2 w-1/2'>
           <div className='mb-4'>
             <label className='block text-sm font-medium text-gray-700'>Email</label>
@@ -84,3 +89,4 @@ function SignInForm() {
 }
 
 export default SignInForm;
+
