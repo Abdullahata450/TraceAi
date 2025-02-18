@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import  Form from './components/login/singup';
 import SignInForm from './components/login/signin';
-import FuturisticUploadPage from '../Upload Memory Dump';
-import ProcessingPage from '../Upload Memory Dump/ProcessingPage';
-import ResultsPage from '../Upload Memory Dump/Result';
+import FuturisticUploadPage from './Upload Memory Dump';
+import ProcessingPage from './Upload Memory Dump/ProcessingPage';
+import ResultsPage from './Upload Memory Dump/Result';
 
 function App() {
   return (
